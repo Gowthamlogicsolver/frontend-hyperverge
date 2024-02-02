@@ -14,6 +14,7 @@ function App() {
         <Route path="/" element={<InitialForm />} />
         <Route path="/main" element={<MainLanding />} /> // Corrected path
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/auth-form" element={<AuthForm />} />
         {/* Add a route for AdminDashboard if needed */}
       </Routes>
     </Router>

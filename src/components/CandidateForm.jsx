@@ -46,7 +46,6 @@ function CandidateForm({ onAddCandidate }) {
           required
         />
         <button type="submit">Add Candidate</button>
-        <button type="submit">Host Election</button>
       </form>
     </div>
   );

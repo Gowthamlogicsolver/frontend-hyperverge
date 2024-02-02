@@ -1,7 +1,7 @@
-// AuthForm.jsx
 import React, { useState } from 'react';
 import CandidateForm from './CandidateForm';
 import './AuthForm.css'; // Import CSS file for styling
+import { useNavigate } from 'react-router-dom';
 
 function AuthForm() {
   const [electionName, setElectionName] = useState('');
@@ -10,14 +10,20 @@ function AuthForm() {
   const [endTime, setEndTime] = useState('');
   const [candidates, setCandidates] = useState([]);
   const [electionCreated, setElectionCreated] = useState(false);
+  const navigate = useNavigate();
 
   const handleAddCandidate = (newCandidate) => {
     setCandidates([...candidates, newCandidate]);
   };
 
-  const handleCreateElection = () => {
+  const handleCreateElection = (e) => {
+    e.preventDefault(); // Prevent form submission
     // Send election data to backend here
     setElectionCreated(true);
+  };
+
+  const handleHostElection = () => {
+    navigate('/admin'); // Navigate to AdminDashboard.jsx
   };
 
   return (
@@ -60,9 +66,11 @@ function AuthForm() {
         </form>
       ) : (
         <div className="election-created">
-          {/* <h2>ELECTION CREATED SUCCESSFULLY</h2> */}
-          <p><h1>ELECTION NAME: {electionName} </h1></p>
+          <p><h1>ELECTION NAME: {electionName}</h1></p>
           <CandidateForm onAddCandidate={handleAddCandidate} />
+          <button className="host-election-button" onClick={handleHostElection}>
+            Host Election
+          </button>
         </div>
       )}
     </div>
