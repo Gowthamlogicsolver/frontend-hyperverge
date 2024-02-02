@@ -1,0 +1,42 @@
+/* Voting.css */
+
+.voting-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f6fafe;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+  }
+  
+  .inner-con {
+    border: 2px solid #f6fafe;
+    background-color:#bf8bff ;
+    padding: 20px;
+    border-radius: 20px;
+    width: 70%; /* Adjust width as needed */
+    max-width: 500px; /* Set a maximum width */
+    height: auto; /* Allow height to adjust based on content */
+    box-sizing: border-box;
+    margin-top:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .voting-container {
+      padding: 10px;
+    }
+  
+    .inner-con {
+      width: 90%; /* Adjust width for smaller screens */
+    }
+  }
+  

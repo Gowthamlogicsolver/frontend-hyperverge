@@ -5,6 +5,7 @@ import MainLanding from './components/MainLanding';
 import InitialForm from './components/InitialForm';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminDashboard from './components/AdminDashbord';
+import Voting from './components/Voting';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/main" element={<MainLanding />} /> // Corrected path
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/auth-form" element={<AuthForm />} />
+        <Route path="/vote" element={<Voting />} />
         {/* Add a route for AdminDashboard if needed */}
       </Routes>
     </Router>

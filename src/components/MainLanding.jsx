@@ -10,7 +10,7 @@ function MainLanding() {
     <>
       <NavBar />
       <div className="votenow-container">
-        <Link to="/" className="votenow-button">VOTE NOW</Link>
+        <Link to="/vote" className="votenow-button">VOTE NOW</Link>
       </div>
       <div className="previous-election-container">
         <div className="image-column">
