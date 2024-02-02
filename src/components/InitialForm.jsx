@@ -31,7 +31,7 @@ function InitialForm() {
 
   return (
     <div className="initial-form-container">
-      <h2>REGISTER</h2>
+      <h2>SIGN IN</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="email"

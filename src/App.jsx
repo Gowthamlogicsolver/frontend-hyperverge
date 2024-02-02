@@ -14,8 +14,8 @@ function App() {
       {/* <MainLanding /> */}
       {/* Other components or content */}
       {/* <AuthForm /> */}
-      {/* <InitialForm /> */}
-      <AdminDashboard />
+      <InitialForm />
+      {/* <AdminDashboard /> */}
     </div>
   );
 }
