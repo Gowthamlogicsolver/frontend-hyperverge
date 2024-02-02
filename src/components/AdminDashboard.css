@@ -1,0 +1,51 @@
+/* AdminDashboard.css */
+.admin-dashboard {
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    background-color:#f6fafe ;
+    border-radius: 25px;
+  }
+  
+  .analytics-container {
+    width:25%;
+    max-width: 600px;
+    margin: 20px 0;
+    background-color: #f6fafe;
+    height:350px;
+    border-radius: 20px;
+  }
+  .analytics-container img{
+    width: 100%;
+    height:100%;
+  }
+  
+  .create-election-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:2rem;
+    
+  }
+  
+  .create-election-button {
+    background-color:#f6fafe;
+    border: none;
+    border-radius: 20px;
+    padding:30px;
+    font-size: 16px;
+    cursor: pointer;
+    /* transition: border 0.3s ease-in-out; */
+  }
+  .create-election-button:hover{
+    border:2.5px solid #dabcff;
+  }
+  
+  /* Media query for responsiveness */
+  @media screen and (max-width: 768px) {
+    .analytics-container {
+      max-width: 90%;
+    }
+  }
+  
