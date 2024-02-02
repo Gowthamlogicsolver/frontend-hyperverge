@@ -10,6 +10,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1); /* Refined box shadow */
+    overflow-y: hidden;
   }
   input{
     border-radius: 10px;
