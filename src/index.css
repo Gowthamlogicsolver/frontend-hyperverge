@@ -8,3 +8,6 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+body{
+  background-color: #f6fafe;
+}
