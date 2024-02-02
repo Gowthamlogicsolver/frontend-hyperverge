@@ -1,35 +1,68 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './InitialForm.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "./InitialForm.css";
+
+const URL = "http://localhost:8080/";
 
 function InitialForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
-  const [adminPassword, setAdminPassword] = useState('');
-  const [signInMessage, setSignInMessage] = useState('');
+  const [adminPassword, setAdminPassword] = useState("");
+  const [signInMessage, setSignInMessage] = useState("");
   const navigate = useNavigate(); // Use the navigate hook from react-router-dom
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const res = await fetch(URL + "voter/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+    const msg = await res.json();
+    if (msg.error) {
+      alert(msg.error);
+      return;
+    }
+    localStorage.setItem("token", msg.token);
+
+    if (msg.error) {
+      setSignInMessage(msg.error);
+    }
 
     // Check admin credentials
     if (isAdmin) {
-      if (adminPassword === 'admin@123') {
-        navigate('/admin'); // Route to AdminDashboard.jsx
+      if (adminPassword === "admin@123") {
+        const res = await fetch(URL + "voter/isVoterAdmin", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        });
+
+        const msg = await res.json();
+        if (msg.isAdmin) {
+          navigate("/admin"); // Route to AdminDashboard.jsx
+        } else {
+          alert("You are not an admin");
+        }
       } else {
-        setSignInMessage('Wrong admin credentials');
+        setSignInMessage("Wrong admin credentials");
       }
     } else {
-      navigate('/main'); // Route to MainLanding.jsx
+      navigate("/main"); // Route to MainLanding.jsx
     }
 
     // Reset form fields (after navigation logic)
-    setEmail('');
-    setPassword('');
+    setEmail("");
+    setPassword("");
     setIsAdmin(false);
-    setAdminPassword('');
-    setSignInMessage('');
+    setAdminPassword("");
+    setSignInMessage("");
   };
 
   return (
@@ -57,7 +90,9 @@ function InitialForm() {
             checked={isAdmin}
             onChange={(e) => setIsAdmin(e.target.checked)}
           />
-          <label htmlFor="isAdmin"><h3>Are you an admin?</h3></label>
+          <label htmlFor="isAdmin">
+            <h3>Are you an admin?</h3>
+          </label>
         </div>
         {isAdmin && (
           <input
@@ -68,10 +103,9 @@ function InitialForm() {
             required
           />
         )}
-        <button type="submit" >Sign In</button>
+        <button type="submit">Sign In</button>
       </form>
     </div>
   );
-
-        }
+}
 export default InitialForm;

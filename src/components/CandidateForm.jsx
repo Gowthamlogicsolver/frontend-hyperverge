@@ -1,22 +1,32 @@
 // CandidateForm.jsx
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function CandidateForm({ onAddCandidate }) {
-  const [partyName, setPartyName] = useState('');
+  const [partyName, setPartyName] = useState("");
   const [symbol, setSymbol] = useState(null);
-  const [description, setDescription] = useState('');
+  const [image, setImage] = useState();
+  const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newCandidate = {
-      partyName,
-      symbol,
-      description
+      name: partyName,
+      image: image,
+      description: description,
     };
     onAddCandidate(newCandidate);
-    setPartyName('');
+    setPartyName("");
     setSymbol(null);
-    setDescription('');
+    setDescription("");
+  };
+  const convertToBase64 = (e) => {
+    const reader = new FileReader();
+    setSymbol(e.target.files[0]);
+    const file = e.target.files[0];
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setImage(reader.result);
+    };
   };
 
   return (
@@ -30,15 +40,20 @@ function CandidateForm({ onAddCandidate }) {
           onChange={(e) => setPartyName(e.target.value)}
           required
         />
-        <label htmlFor="symbol"><h2>Symbol</h2></label>
-        <input className='browse'
+        <label htmlFor="symbol">
+          <h2>Symbol</h2>
+        </label>
+        <input
+          className="browse"
           type="file"
           id="symbol"
           accept="image/png, image/jpeg"
-          onChange={(e) => setSymbol(e.target.files[0])}
+          onChange={convertToBase64}
           required
         />
-        <label htmlFor="candidate-desc"><h2>Candidate-Description</h2></label>
+        <label htmlFor="candidate-desc">
+          <h2>Candidate-Description</h2>
+        </label>
         <textarea
           placeholder="Description"
           value={description}
