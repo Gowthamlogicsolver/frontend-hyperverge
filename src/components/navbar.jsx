@@ -1,12 +1,17 @@
-// Navbar.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './navbar.css';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate(); // Import useNavigate for routing
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogout = () => {
+    navigate('/'); // Navigate to the root path (InitialForm.jsx)
   };
 
   return (
@@ -14,9 +19,7 @@ function Navbar() {
       <div className="navbar-container">
         <div className="navbar-logo">Logo</div>
         <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <a href="/" onClick={handleLogout}>Logout</a> {/* Use onClick for routing */}
         </div>
         <div className="navbar-hamburger" onClick={toggleMenu}>
           <div className={`line line1 ${isOpen ? 'open' : ''}`}></div>
