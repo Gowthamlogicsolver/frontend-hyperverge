@@ -13,18 +13,23 @@ function InitialForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Handle sign-in logic (e.g., send data to backend)
-    // ... your sign-in logic here ...
+    // Check admin credentials
+    if (isAdmin) {
+      if (adminPassword === 'admin@123') {
+        navigate('/admin'); // Route to AdminDashboard.jsx
+      } else {
+        setSignInMessage('Wrong admin credentials');
+      }
+    } else {
+      navigate('/main'); // Route to MainLanding.jsx
+    }
 
-    // Reset form fields
+    // Reset form fields (after navigation logic)
     setEmail('');
     setPassword('');
     setIsAdmin(false);
     setAdminPassword('');
     setSignInMessage('');
-
-    // Navigate to MainLanding component after successful sign-in
-    navigate('/main'); // Use navigate to route
   };
 
   return (

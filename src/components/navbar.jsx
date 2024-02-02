@@ -17,7 +17,6 @@ function Navbar() {
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
-          <a href="#">Sign In</a>
         </div>
         <div className="navbar-hamburger" onClick={toggleMenu}>
           <div className={`line line1 ${isOpen ? 'open' : ''}`}></div>
