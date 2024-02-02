@@ -38,6 +38,7 @@ function CandidateForm({ onAddCandidate }) {
           onChange={(e) => setSymbol(e.target.files[0])}
           required
         />
+        <label htmlFor="candidate-desc"><h2>Candidate-Description</h2></label>
         <textarea
           placeholder="Description"
           value={description}
@@ -45,6 +46,7 @@ function CandidateForm({ onAddCandidate }) {
           required
         />
         <button type="submit">Add Candidate</button>
+        <button type="submit">Host Election</button>
       </form>
     </div>
   );

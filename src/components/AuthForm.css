@@ -8,11 +8,14 @@
   /* background-color:#e5d0ff ; */
   background-color: #bf8bff;
   border-radius: 20px;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  width: 90%; 
+  max-width: 800px;
   /* box-shadow: 0px 4px 8px rgba(191, 139, 255, 0.2), 0px 6px 20px rgba(191, 139, 255, 0.3); */
   box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1); /* Refined box shadow */
+  overflow-y: hidden;
 }
 
 .auth-form-container input,
@@ -30,14 +33,21 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  font-weight:400;
+  font-size: calc(0.4vw + 14px);
+  transition: border 0.3s ease-in-out;
+  border-color:#f6fafe;
+  transition: padding 0.3s ease-in-out;
 }
 
 .auth-form-container button:hover {
-  background-color:#f6fafe ;
+  border:2.5px solid #dabcff;
+  padding:10px;
 }
 
 .candidates-list {
   margin-top: 20px;
+  border-top: 2px solid white;
 }
 
 .candidate {
@@ -54,6 +64,7 @@
 input{
   border-radius: 10px;
   border: 5px solid #f6fafe; 
+  border-color: #f6fafe;
 }
 textarea{
   border-radius: 10px;
@@ -63,5 +74,10 @@ textarea{
 @media (max-width: 600px) {
   .auth-form-container {
     width: 90%;
+  }
+  @media (max-width: 768px) {
+    .auth-form-container {
+      width: 90%;
+    }
   }
 }
