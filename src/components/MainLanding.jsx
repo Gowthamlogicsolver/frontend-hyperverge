@@ -1,10 +1,16 @@
 // PreviousElection.jsx
 import React from 'react';
-import './previous_election.css'; // Import CSS file for styling
+import './MainLanding.css'; // Import CSS file for styling
 import image from '../assets/stats2.webp';
+import NavBar from './navbar';
 
-function PreviousElection() {
+function MainLanding() {
   return (
+    <>
+    <NavBar />
+    <div className="votenow-container">
+        <button className="votenow-button">VOTE NOW</button>
+    </div>
     <div className="previous-election-container">
       <div className="image-column">
         <img src={image} alt="Previous Election" className="election-image" />
@@ -16,7 +22,8 @@ function PreviousElection() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
-export default PreviousElection;
+export default MainLanding;

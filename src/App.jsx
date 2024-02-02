@@ -2,7 +2,7 @@
 import React from 'react';
 import AuthForm from './components/AuthForm';
 import Navbar from './components/navbar';
-import PreviousElection from './components/previous_election';
+import MainLanding from './components/MainLanding';
 import InitialForm from './components/InitialForm';
 import AdminDashboard from './components/AdminDashbord';
 import './App.css';
@@ -11,7 +11,7 @@ function App() {
   return (
     <div class="nav1">
       {/* <Navbar /> */}
-      {/* <PreviousElection /> */}
+      {/* <MainLanding /> */}
       {/* Other components or content */}
       {/* <AuthForm /> */}
       {/* <InitialForm /> */}
