@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 .votenow-button{
     background-color:#f6fafe;
@@ -22,6 +23,7 @@
     padding:30px;
     font-size: 16px;
     cursor: pointer;
+    text-decoration: none;
 }
 .votenow-button:hover{
     border:2.5px solid #dabcff;
@@ -43,6 +45,7 @@ img{
     align-items: center;
     padding: 1.2rem;
 }
+
 @media screen and (max-width: 768px) {
     .previous-election-container
     {

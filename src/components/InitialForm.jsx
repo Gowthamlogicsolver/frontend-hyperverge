@@ -1,6 +1,6 @@
-// InitialForm.jsx
 import React, { useState } from 'react';
-import './InitialForm.css'; // Import CSS file for styling
+import { useNavigate } from 'react-router-dom';
+import './InitialForm.css';
 
 function InitialForm() {
   const [email, setEmail] = useState('');
@@ -8,25 +8,23 @@ function InitialForm() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [adminPassword, setAdminPassword] = useState('');
   const [signInMessage, setSignInMessage] = useState('');
+  const navigate = useNavigate(); // Use the navigate hook from react-router-dom
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Check if user is admin and validate admin password if applicable
-    if (isAdmin && adminPassword !== 'admin123') {
-      setSignInMessage('Incorrect admin password');
-      return;
-    }
+
     // Handle sign-in logic (e.g., send data to backend)
-    // Here, you can replace the console.log with your actual sign-in logic
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Is Admin:', isAdmin);
+    // ... your sign-in logic here ...
+
     // Reset form fields
     setEmail('');
     setPassword('');
     setIsAdmin(false);
     setAdminPassword('');
     setSignInMessage('');
+
+    // Navigate to MainLanding component after successful sign-in
+    navigate('/main'); // Use navigate to route
   };
 
   return (
@@ -65,11 +63,10 @@ function InitialForm() {
             required
           />
         )}
-        <button type="submit">Sign In</button>
-        {signInMessage && <p className="error-message">{signInMessage}</p>}
+        <button type="submit" >Sign In</button>
       </form>
     </div>
   );
-}
 
+        }
 export default InitialForm;
