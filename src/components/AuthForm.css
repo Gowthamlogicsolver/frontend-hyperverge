@@ -5,6 +5,14 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  /* background-color:#e5d0ff ; */
+  background-color: #bf8bff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 0px 4px 8px rgba(191, 139, 255, 0.2), 0px 6px 20px rgba(191, 139, 255, 0.3); */
+  box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1); /* Refined box shadow */
 }
 
 .auth-form-container input,
@@ -18,15 +26,14 @@
 }
 
 .auth-form-container button {
-  background-color: #007bff;
-  color: #fff;
+  background-color:#f6fafe ;
   border: none;
-  border-radius: 3px;
+  border-radius: 20px;
   cursor: pointer;
 }
 
 .auth-form-container button:hover {
-  background-color: #0056b3;
+  background-color:#f6fafe ;
 }
 
 .candidates-list {
@@ -38,6 +45,19 @@
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
+}
+.browse{
+  border: 2px solid #f6fafe;
+  border-radius: 10px;
+  background-color:#f6fafe ;
+}
+input{
+  border-radius: 10px;
+  border: 5px solid #f6fafe; 
+}
+textarea{
+  border-radius: 10px;
+  border: 5px solid #f6fafe; 
 }
 
 @media (max-width: 600px) {

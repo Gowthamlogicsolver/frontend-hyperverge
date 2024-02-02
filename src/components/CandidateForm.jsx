@@ -30,8 +30,8 @@ function CandidateForm({ onAddCandidate }) {
           onChange={(e) => setPartyName(e.target.value)}
           required
         />
-        <label htmlFor="symbol">Symbol:</label>
-        <input
+        <label htmlFor="symbol"><h2>Symbol</h2></label>
+        <input className='browse'
           type="file"
           id="symbol"
           accept="image/png, image/jpeg"

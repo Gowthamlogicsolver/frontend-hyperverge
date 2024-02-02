@@ -71,7 +71,7 @@ function AuthForm() {
           ))}
         </div>
         <CandidateForm onAddCandidate={handleAddCandidate} />
-        <button type="submit">Submit Election</button>
+        <button type="submit">Host Election</button>
       </form>
     </div>
   );
