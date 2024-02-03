@@ -83,6 +83,7 @@ function AuthForm() {
       alert(msg.error);
       return;
     }
+    alert(`Candidate ${newCandidate.name} added`);
   };
 
   const handleCreateElection = async (e) => {

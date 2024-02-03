@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./navbar.css";
+import image from "../assets/secure-vote-logo.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,9 @@ function Navbar() {
   return (
     <nav className={`navbar ${isOpen ? "open" : ""}`}>
       <div className="navbar-container">
-        <div className="navbar-logo">Logo</div>
+        <div className="navbar-logo">
+          <img src={image} alt="Secure Vote" />
+        </div>
         <div className={`navbar-links ${isOpen ? "open" : ""}`}>
           <a href="/" onClick={handleLogout}>
             Logout

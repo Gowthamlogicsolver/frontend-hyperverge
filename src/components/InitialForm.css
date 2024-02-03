@@ -1,72 +1,100 @@
 /* InitialForm.css */
 .initial-form-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 30px;
-    border: 1px solid #ccc;
-    background-color: #bf8bff;
-    border-radius:20px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1); /* Refined box shadow */
-    overflow-y: hidden;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  background-color: #bf8bff;
+  border-radius: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1); /* Refined box shadow */
+  overflow-y: hidden;
+  border: 5px solid #f6fafe;
+}
+h1 {
+  font-size: calc(
+    1.5em + 1vw
+  ); /* Set a base font size with a responsive adjustment */
+}
+
+@media only screen and (max-width: 600px) {
+  /* Adjust font size for smaller screens */
+  h1 {
+    font-size: calc(1.2em + 1vw);
   }
-  input{
-    border-radius: 10px;
-    border: 5px solid #f6fafe; 
-    border-color: #f6fafe;
+}
+
+@media only screen and (max-width: 400px) {
+  /* Further adjustment for even smaller screens */
+  h1 {
+    font-size: calc(1em + 1vw);
   }
-  
-  .initial-form-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .initial-form-container form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .initial-form-container input {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .admin-checkbox {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .admin-checkbox label {
-    margin-left: 5px;
-  }
-  
-  .initial-form-container button {
-    background-color:#f6fafe;
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-    cursor: pointer;
-    font-weight:400;
-    font-size: calc(0.4vw + 14px);
-    transition: border 0.3s ease-in-out;
-    border-color:#f6fafe;
-    transition: padding 0.3s ease-in-out;
-  }
-  
-  .initial-form-container button:hover {
-    border:2.5px solid #dabcff;
-    padding:10px;
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 10px;
-  }
-  
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  border-radius: 20px;
+  border: 5px solid #f6fafe;
+  background-color: #bf8bff;
+}
+input {
+  border-radius: 10px;
+  border: 5px solid #f6fafe;
+  border-color: #f6fafe;
+}
+
+.initial-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.initial-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.initial-form-container input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.admin-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.admin-checkbox label {
+  margin-left: 5px;
+}
+
+.initial-form-container button {
+  background-color: #f6fafe;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: calc(0.4vw + 14px);
+  transition: border 0.3s ease-in-out;
+  border-color: #f6fafe;
+  transition: padding 0.3s ease-in-out;
+}
+
+.initial-form-container button:hover {
+  border: 2.5px solid #dabcff;
+  padding: 10px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}

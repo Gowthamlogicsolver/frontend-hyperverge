@@ -28,21 +28,23 @@ function MainLanding() {
       });
       const vot = await res.json();
       console.log(vot);
+      setVoter(vot);
+    })();
+
+    (async () => {
       const r = await fetch(URL + "voter/getVoterByMail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           authorization: localStorage.getItem("token"),
         },
-        body: JSON.stringify({ email: vot.email }),
+        body: JSON.stringify({ email: voter.email }),
       });
 
       const voterr = await r.json();
+
       setHasVoted(voterr.hasVoted);
-
-      setVoter(vot);
     })();
-
     (async () => {
       const res = await fetch(URL + "election", {
         method: "GET",
@@ -53,8 +55,9 @@ function MainLanding() {
       });
       const data = await res.json();
       setElectionData(data);
+      setIsLoading(true);
     })();
-    setIsLoading(true);
+    console.log(isLoading);
   }, []);
 
   const handleVoteNow = async (e) => {
@@ -102,6 +105,15 @@ function MainLanding() {
           </div>
 
           <div className="votenow-container">
+            <div>
+              See how you're votes gets Stored:{" "}
+              <a
+                href="https://sepolia.etherscan.io/address/0x79866015cEb447c7827790830c3458C389FF1c39#code"
+                target="_blank"
+              >
+                Click here
+              </a>
+            </div>
             {!hasVoted ? (
               <button className="votenow-button" onClick={handleVoteNow}>
                 VOTE NOW
